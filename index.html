@@ -212,17 +212,36 @@
             <div class="container mx-auto px-6 text-center">
                 <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-2">Curriculum</h3>
                 <h4 class="section-title">Course Contents</h4>
-                <div class="max-w-4xl mx-auto text-left bg-gray-800 p-8 rounded-lg border border-gray-700">
-                    <ul class="space-y-4 text-gray-300 grid sm:grid-cols-2 gap-x-8">
-                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>eTrading Concepts & Algorithms</li>
-                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Market Structure & Trading Products</li>
-                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Systems Study: Exchanges, Dark Pools, MTFs</li>
-                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Component Deep Dive: OMS, SOR, Connectivity</li>
-                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Critical Safety Concepts: Kill Switch & Risk</li>
-                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Performance: Architectural KPIs & Latency</li>
-                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Regulations: Motivations and Implementation</li>
-                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Case Studies: Outages, Flash Crashes</li>
-                    </ul>
+                <div class="max-w-5xl mx-auto text-left bg-gray-800 p-8 rounded-lg border border-gray-700">
+                    <div class="grid sm:grid-cols-2 gap-x-12 gap-y-6">
+                        <div>
+                            <h5 class="text-xl font-semibold text-white mb-3">Core Concepts & Market Structure</h5>
+                            <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>eTrading concepts, Algorithms, flows, Market Structure, Trading Products</span></li>
+                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Systems study: Exchanges, Dark pools, MTFs, ECNs, Market Makers, SIs</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="text-xl font-semibold text-white mb-3">System Components</h5>
+                             <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Components: Marketdata, OMS, Connectivity, Smart Order Router, Strategies</span></li>
+                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Performance: Architectural KPIs, SLAs, Latency Game</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="text-xl font-semibold text-white mb-3">Risk & Regulation</h5>
+                             <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Critical Safety Concepts: Kill Switch, Trade Control, Risk Management</span></li>
+                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Regulations: motivations, impact and implementation</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="text-xl font-semibold text-white mb-3">Real-World Application</h5>
+                             <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Case studies: tech issues, control failures, flash crashes, repercussions</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -241,8 +260,9 @@
                         <p class="text-blue-400 font-semibold mt-1">Software Design Manager, Electronic Trading Technology, Citigroup, London</p>
                         <ul class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
                             <li>15+ years in Trading Technology, 23+ years professional experience.</li>
-                            <li>Vast exposure as a developer, Tech Lead, and Platform Manager across a variety of trading systems.</li>
+                            <li>Vast exposure as developer, Tech Lead, and Platform Manager across a variety of trading systems.</li>
                             <li>Skilled at transforming complex concepts for varied audiences.</li>
+                            <li>Trained many engineers for tech ladder growth.</li>
                         </ul>
                     </div>
                 </div>
@@ -256,7 +276,7 @@
                     <svg class="w-8 h-8 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                     <div>
                         <h5 class="font-bold mb-1">Please Note: What This Course Is Not</h5>
-                        <p>This is <span class="font-bold">NOT</span> a "how to trade" course, nor is it a generic software design program. Our focus is specifically on the interconnected ecosystem of eTrading systems.</p>
+                        <p>A "how to trade" course OR A software design program. Our focus is specifically on the understanding of interconnected ecosystem of eTrading systems.</p>
                     </div>
                  </div>
              </div>
