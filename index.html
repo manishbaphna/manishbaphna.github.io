@@ -3,242 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eTrading Systems Training</title>
+    <title>eTrading Systems Training - Professional Development</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
         .gradient-text {
-            background: linear-gradient(90deg, #a7b2c5, #e1e8f5);
+            background: linear-gradient(90deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #581c87 100%);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
         .cta-button {
             transition: all 0.3s ease;
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
         }
+        
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 5px rgba(37, 99, 235, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1.5rem;
+        
+        .card-hover {
+            transition: all 0.3s ease;
         }
-        .section-subtitle {
-             font-size: 1.125rem;
-             color: #9ca3af;
-             max-width: 48rem;
-             margin-left: auto;
-             margin-right: auto;
-             margin-bottom: 3rem;
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #3b82f6;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
         }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-300">
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-sm border-b border-gray-700">
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-white">eTradingSystems.Training</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#problem" class="hover:text-white transition-colors">The Gap</a>
-                <a href="#impact" class="hover:text-white transition-colors">Impact</a>
-                <a href="#solution" class="hover:text-white transition-colors">Solution</a>
-                <a href="#contents" class="hover:text-white transition-colors">Contents</a>
-                <a href="#speaker" class="hover:text-white transition-colors">Speaker</a>
-            </nav>
-            <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors flex items-center gap-2">
-                Register
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
+            <a href="#" class="text-2xl font-bold text-white flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-chart-line text-white"></i>
+                </div>
+                eTradingSystems.Training
             </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#problem" class="hover:text-white transition-colors flex items-center gap-2">
+                    <i class="fas fa-exclamation-triangle text-sm"></i>The Gap
+                </a>
+                <a href="#impact" class="hover:text-white transition-colors flex items-center gap-2">
+                    <i class="fas fa-bullseye text-sm"></i>Impact
+                </a>
+                <a href="#solution" class="hover:text-white transition-colors flex items-center gap-2">
+                    <i class="fas fa-lightbulb text-sm"></i>Solution
+                </a>
+                <a href="#contents" class="hover:text-white transition-colors flex items-center gap-2">
+                    <i class="fas fa-book text-sm"></i>Contents
+                </a>
+                <!--a href="#speaker" class="hover:text-white transition-colors flex items-center gap-2">
+                    <i class="fas fa-user text-sm"></i>Speaker
+                </a-->
+            </nav>
+
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="relative py-20 md:py-32 overflow-hidden">
-            <!-- Background Graphic -->
-            <div class="absolute inset-0 z-0 opacity-10">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="a" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="scale(2) rotate(45)"><rect x="0" y="0" width="100%" height="100%" fill="none"/><path d="M10-10v40M-10 10h40" stroke="#4A5568" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#a)"/></svg>
+        <section class="relative py-20 md:py-32 overflow-hidden hero-gradient">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-animation"></div>
+                <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-animation" style="animation-delay: 2s;"></div>
+                <div class="absolute top-40 left-1/2 w-60 h-60 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-animation" style="animation-delay: 4s;"></div>
             </div>
+            
+            <!-- Grid Pattern -->
+            <div class="absolute inset-0 z-0 opacity-10">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="scale(2) rotate(45)">
+                            <rect x="0" y="0" width="100%" height="100%" fill="none"/>
+                            <path d="M10-10v40M-10 10h40" stroke="#4A5568" stroke-width="0.5"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)"/>
+                </svg>
+            </div>
+            
             <div class="container mx-auto px-6 text-center relative z-10">
-                <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
-                    <span class="gradient-text">Bridging the Critical Knowledge Gap in the eTrading Ecosystem</span>
-                </h2>
-                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                <!-- Hero Badge -->
+                <div class="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-8 border border-blue-500/30">
+                    <i class="fas fa-star pulse-animation"></i>
+                    Industry-Leading Training Program
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    <span class="text-white">Bridging the Critical</span><br>
+                    <span class="gradient-text">Knowledge Gap</span><br>
+                    <span class="text-white">in eTrading Systems</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
                     Understand the "WHYs" behind the "WHAT" you do. Transform siloed experts into a cohesive, resilient unit with a shared understanding of the entire eTrading lifecycle.
                 </p>
-                <a href="#solution" class="cta-button inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 shadow-lg">
-                    Discover the Solution
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
+                
+                
+                <!-- Hero CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#solution" class="cta-button inline-flex items-center gap-3 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-2xl">
+                        <i class="fas fa-play-circle"></i>
+                        Discover the Solution
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- The Problem Section ("What's the Gap") -->
-        <section id="problem" class="py-20 bg-gray-800/50">
-            <div class="container mx-auto px-6 text-center">
-                <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-2">The Challenge</h3>
-                <h4 class="section-title">The Hidden Knowledge Gap</h4>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto text-left">
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 flex items-start gap-4">
-                        <svg class="w-8 h-8 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.687 14.313l-1.374 1.374a2 2 0 01-2.828 0l-4-4a2 2 0 010-2.828l1.374-1.374M16 5l-4 4m0 0l-4-4m4 4v10"></path></svg>
-                        <span>Fragmented understanding of eTrading systems across all roles.</span>
+
+        <div class="section-divider"></div>
+        <!-- The Problem Section -->
+        <section id="problem" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 bg-blue-500/20 text--300 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        THE CHALLENGE
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 flex items-start gap-4">
-                        <svg class="w-8 h-8 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
-                        <span>Holistic understanding of inter-system interactions remains elusive for most developers.</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">The Hidden Knowledge Gap</h2>
+                </div>
+                
+
+                <!-- Problem Cards Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                    <div class="card-hover bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-sitemap text-red-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white mb-2">Fragmented Understanding</h3>
+                                <p class="text-gray-400">eTrading systems knowledge scattered across roles and departments.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 flex items-start gap-4">
-                        <svg class="w-8 h-8 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 10L3 3"></path></svg>
-                        <span>Developers design without the "Big Picture," constrained to their immediate system.</span>
+                    
+                    <div class="card-hover bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-link text-orange-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white mb-2">Missing Connections</h3>
+                                <p class="text-gray-400">Holistic understanding of inter-system interactions remains elusive.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 flex items-start gap-4">
-                        <svg class="w-8 h-8 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                        <span>Technologists don't appreciate the reasoning behind regulations.</span>
+                    
+                    <div class="card-hover bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-eye-slash text-yellow-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white mb-2">Limited Vision</h3>
+                                <p class="text-gray-400">Developers design without the "Big Picture," constrained to immediate systems.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 flex items-start gap-4">
-                        <svg class="w-8 h-8 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
-                        <span>Compliance is often treated as a mandatory, boring task.</span>
+                    
+                    <div class="card-hover bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-gavel text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white mb-2">Regulatory Disconnect</h3>
+                                <p class="text-gray-400">Technologists don't appreciate the reasoning behind regulations.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 flex items-start gap-4">
-                        <svg class="w-8 h-8 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-1.781-4.121"></path></svg>
-                        <span>Business and technologists struggle to understand each other's concerns.</span>
+                    
+                    <div class="card-hover bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clipboard-check text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white mb-2">Compliance Burden</h3>
+                                <p class="text-gray-400">Compliance treated as mandatory, boring task rather than business enabler.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-handshake text-green-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white mb-2">Communication Gap</h3>
+                                <p class="text-gray-400">Business and technologists struggle to understand each other's concerns.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Impact on Key Roles Section -->
-        <section id="impact" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-2">The Consequences</h3>
-                <h4 class="section-title">Impact on Key Roles</h4>
-                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12 text-left">
-                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
-                        <h5 class="font-bold text-2xl text-white mb-4 flex items-center gap-3">
-                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                            Developers
-                        </h5>
-                        <ul class="space-y-3 text-gray-400 list-disc list-inside">
-                            <li>Work in silos with limited exposure to the "big picture."</li>
-                            <li>Don't see the impact of their design choices on downstream systems.</li>
-                            <li>Lack awareness of the broader trading landscape, including regulatory and risk frameworks.</li>
-                            <li>Feel disconnected from business value and rely on a single "system expert," creating key-person risk.</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
-                        <h5 class="font-bold text-2xl text-white mb-4 flex items-center gap-3">
-                           <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                            Tech Leads & Architects
-                        </h5>
-                        <ul class="space-y-3 text-gray-400 list-disc list-inside">
-                            <li>Struggle to provide strategic technical direction.</li>
-                            <li>Fragmented team knowledge leads to suboptimal, fragile systems.</li>
-                            <li>Push back on collaborative work due to a narrow vision.</li>
-                            <li>Suboptimal design choices lead to systems prone to downtime and poor scalability.</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
-                        <h5 class="font-bold text-2xl text-white mb-4 flex items-center gap-3">
-                           <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                            Managers & Executives
-                        </h5>
-                        <ul class="space-y-3 text-gray-400 list-disc list-inside">
-                            <li>Inability to make informed decisions on resources, priorities, and risk.</li>
-                            <li>Difficulty evaluating design proposals and understanding technical challenges.</li>
-                            <li>Creates a trust deficit between leadership and engineering, leading to missed opportunities.</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
-                        <h5 class="font-bold text-2xl text-white mb-4 flex items-center gap-3">
-                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.124-1.282-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.124-1.282.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            Business Stakeholders
-                        </h5>
-                        <ul class="space-y-3 text-gray-400 list-disc list-inside">
-                            <li>Lack fundamental understanding of system capabilities, leading to misaligned expectations.</li>
-                            <li>Experience disconnects in conversations with technology teams.</li>
-                            <li>Unable to effectively map regulatory or trading goals to technical feasibility.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="section-divider"></div>
 
-        <!-- The Solution Section -->
-        <section id="solution" class="py-20 bg-gray-800/50">
-            <div class="container mx-auto px-6 text-center">
-                <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-2">Our Mission</h3>
-                <h4 class="section-title">How We Bridge the Gap</h4>
-                <p class="section-subtitle">We empower your teams through a first-of-its-kind, industry-specific training program designed to create a shared, holistic understanding of the entire eTrading ecosystem.</p>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
-                        <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-                        <h5 class="font-bold text-xl text-white mb-2">Illuminate Concepts</h5>
-                        <p class="text-gray-400">Clarify key ideas: market making, crossing, internalization, regulations, and SLAs.</p>
+        <!-- Impact Section -->
+        <section id="impact" class="py-20 bg-gray-800/30">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 bg-orange-500/20 text-orange-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <i class="fas fa-chart-line-down"></i>
+                        THE CONSEQUENCES
                     </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
-                        <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                        <h5 class="font-bold text-xl text-white mb-2">Demystify Systems</h5>
-                        <p class="text-gray-400">Break down complex trading systems and their common components.</p>
-                    </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
-                        <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                        <h5 class="font-bold text-xl text-white mb-2">Learn from History</h5>
-                        <p class="text-gray-400">Deep-dive into case studies of outages and crashes to learn from past mistakes.</p>
-                    </div>
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
-                        <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-                        <h5 class="font-bold text-xl text-white mb-2">Acquire Foundations</h5>
-                        <p class="text-gray-400">Build foundational knowledge for better engineering and leadership decisions.</p>
-                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Impact on Key Roles</h2>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        See how knowledge gaps affect different stakeholders across your organization.
+                    </p>
                 </div>
-            </div>
-        </section>
-        
-        <!-- Course Contents Section -->
-        <section id="contents" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-2">Curriculum</h3>
-                <h4 class="section-title">Course Contents</h4>
-                <div class="max-w-5xl mx-auto text-left bg-gray-800 p-8 rounded-lg border border-gray-700">
-                    <div class="grid sm:grid-cols-2 gap-x-12 gap-y-6">
-                        <div>
-                            <h5 class="text-xl font-semibold text-white mb-3">Core Concepts & Market Structure</h5>
+
+                <!-- Impact Cards -->
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <!-- Developers Card -->
+                    <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -translate-y-16 translate-x-16"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-code text-2xl text-blue-400"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Developers</h3>
+                            </div>
                             <ul class="space-y-3 text-gray-400">
-                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>eTrading concepts, Algorithms, flows, Market Structure, Trading Products</span></li>
-                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Systems study: Exchanges, Dark pools, MTFs, ECNs, Market Makers, SIs</span></li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Work in silos with limited exposure to the "big picture"
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Don't see impact of design choices on downstream systems
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Lack awareness of broader trading landscape, including regulatory and risk frameworks
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Feel disconnected from business valueand rely on a single "system expert," creating key-person risk
+                                </li>
                             </ul>
                         </div>
-                        <div>
-                            <h5 class="text-xl font-semibold text-white mb-3">System Components</h5>
-                             <ul class="space-y-3 text-gray-400">
-                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Components: Marketdata, OMS, Connectivity, Smart Order Router, Strategies</span></li>
-                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Performance: Architectural KPIs, SLAs, Latency Game</span></li>
+                    </div>
+
+                    <!-- Tech Leads Card -->
+                    <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full -translate-y-16 translate-x-16"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-users-cog text-2xl text-purple-400"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Tech Leads & Architects</h3>
+                            </div>
+                            <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Struggle to provide strategic technical direction
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Fragmented team knowledge leads to suboptimal, fragile systems
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Push back on collaborative work due to narrow vision
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Poor design choices causing downtime and scalability issues
+                                </li>
                             </ul>
                         </div>
-                        <div>
-                            <h5 class="text-xl font-semibold text-white mb-3">Risk & Regulation</h5>
-                             <ul class="space-y-3 text-gray-400">
-                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Critical Safety Concepts: Kill Switch, Trade Control, Risk Management</span></li>
-                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Regulations: motivations, impact and implementation</span></li>
+                    </div>
+
+                    <!-- Managers Card -->
+                    <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full -translate-y-16 translate-x-16"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-chart-bar text-2xl text-green-400"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Managers & Executives</h3>
+                            </div>
+                            <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Inability to make informed decisions on resources and priorities
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Difficulty evaluating design proposals and technical challenges
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Trust deficit between leadership and engineering
+                                </li>
                             </ul>
                         </div>
-                        <div>
-                            <h5 class="text-xl font-semibold text-white mb-3">Real-World Application</h5>
-                             <ul class="space-y-3 text-gray-400">
-                                <li class="flex items-start"><svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Case studies: tech issues, control failures, flash crashes, repercussions</span></li>
+                    </div>
+
+                    <!-- Business Stakeholders Card -->
+                    <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full -translate-y-16 translate-x-16"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-orange-500/20 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-briefcase text-2xl text-orange-400"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Business Stakeholders</h3>
+                            </div>
+                            <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Lack fundamental understanding of system capabilities, leading to misaligned expectations
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Experience disconnects in conversations with technology teams
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle text-red-400 text-xs mt-2 flex-shrink-0"></i>
+                                    Unable to map regulatory goals to technical feasibility
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -246,63 +384,330 @@
             </div>
         </section>
 
-        <!-- About the Speaker Section -->
-        <section id="speaker" class="py-20 bg-gray-800/50">
-            <div class="container mx-auto px-6 text-center">
-                 <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-2">Your Instructor</h3>
-                <h4 class="section-title">About the Speaker</h4>
-                <div class="max-w-4xl mx-auto bg-gray-900 rounded-lg border border-gray-700 p-8 md:p-12 text-left flex flex-col md:flex-row items-center gap-8">
-                    <div class="flex-shrink-0">
-                         <img class="w-40 h-40 rounded-full" src="https://placehold.co/160x160/4A5568/E2E8F0?text=MB" alt="Manish Baphna">
+        <div class="section-divider"></div>
+        <!-- Solution Section -->
+        <section id="solution" class="py-20 bg-gradient-to-br from-blue-900/20 to-purple-900/20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <i class="fas fa-lightbulb"></i>
+                        OUR SOLUTION
                     </div>
-                    <div>
-                        <h5 class="text-3xl font-bold text-white">Manish Baphna</h5>
-                        <p class="text-blue-400 font-semibold mt-1">Software Design Manager, Electronic Trading Technology, Citigroup, London</p>
-                        <ul class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
-                            <li>15+ years in Trading Technology, 23+ years professional experience.</li>
-                            <li>Vast exposure as developer, Tech Lead, and Platform Manager across a variety of trading systems.</li>
-                            <li>Skilled at transforming complex concepts for varied audiences.</li>
-                            <li>Trained many engineers for tech ladder growth.</li>
-                        </ul>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Comprehensive eTrading Systems Training</h2>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        We empower your teams through a first-of-its-kind, industry-specific training program designed to create a shared, holistic understanding of the entire eTrading ecosystem.
+                    </p>
+                </div>
+
+                <!-- Solution Overview -->
+                <div class="container mx-auto px-6 text-center">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                        <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
+                            <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                            <h5 class="font-bold text-xl text-white mb-2">Illuminate Concepts</h5>
+                            <p class="text-gray-400">Clarify key ideas: market making, crossing, internalization, regulations, and SLAs.</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
+                            <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                            <h5 class="font-bold text-xl text-white mb-2">Demystify Systems</h5>
+                            <p class="text-gray-400">Break down complex trading systems and their common components.</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
+                            <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            <h5 class="font-bold text-xl text-white mb-2">Learn from History</h5>
+                            <p class="text-gray-400">Deep-dive into case studies of outages and crashes to learn from past mistakes.</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 text-center">
+                            <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            <h5 class="font-bold text-xl text-white mb-2">Acquire Foundations</h5>
+                            <p class="text-gray-400">Build foundational knowledge for better engineering and leadership decisions.</p>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="section-divider"></div>
+        <!-- Course Contents Section -->
+        <section id="contents" class="py-20 bg-gradient-to-br from-blue-900/20 to-purple-900/20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <i class="fas fa-lightbulb"></i>
+                        CURRICULUM
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">COURSE CONTENTS</h2>
+                    
+                </div>
+               
+                <!-- Training Modules -->
+                <div class="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+                    <!-- Module 1 -->
+                    <div class="card-hover bg-gray-800 p-8 rounded-2xl border border-gray-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full -translate-y-12 translate-x-12"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                                    <span class="text-blue-400 font-bold">01</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Trading Landscape Overview</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">
+                                Understand the complete eTrading ecosystem from market structure to regulatory frameworks.
+                            </p>
+                            <ul class="space-y-2 text-gray-400">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Market microstructure, Flows, Algorithms
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Systems study: Exchanges, Dark pools, MTFs, ECNs, Market Makers, SIs
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Regulatory landscape (MiFID II, Dodd-Frank, etc.)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="card-hover bg-gray-800 p-8 rounded-2xl border border-gray-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full -translate-y-12 translate-x-12"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                                    <span class="text-purple-400 font-bold">02</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">System Components</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">
+                                Explore the technical architecture of modern trading systems and their interconnections.
+                            </p>
+                            <ul class="space-y-2 text-gray-400">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Marketdata, OMS, Connectivity, Smart Order Router, Strategies
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Performance: Architectural KPIs, SLAs, Latency Game
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Trading infrastructure
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="card-hover bg-gray-800 p-8 rounded-2xl border border-gray-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-green-500/10 rounded-full -translate-y-12 translate-x-12"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
+                                    <span class="text-green-400 font-bold">03</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Risk & Compliance Integration</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">
+                                Learn how risk management and compliance are woven into every aspect of trading systems.
+                            </p>
+                            <ul class="space-y-2 text-gray-400">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Concept of Risk, pre/post trade risk checks
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Critical Safety Concepts: Kill Switch, Trade Control, Risk Management
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Regulations: motivations, impact and implementation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Module 4 -->
+                    <div class="card-hover bg-gray-800 p-8 rounded-2xl border border-gray-700 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-orange-500/10 rounded-full -translate-y-12 translate-x-12"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center">
+                                    <span class="text-orange-400 font-bold">04</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Real-World Application</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">
+                                Examples and activities to apply knowledge in real-world scenarios.
+                            </p>
+                            <ul class="space-y-2 text-gray-400">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Case studies: Tech issues, Control failures, Flash Crashes
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Understading Repercussions of poor design choices
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-400 text-sm"></i>
+                                    Cross-team collaboration exercises
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <i class="fas fa-trophy"></i>
+                        TRAINING BENEFITS
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Transform Your Team's Capabilities</h2>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        See the measurable impact of comprehensive eTrading systems knowledge.
+                    </p>
+                </div>
+
+                <!-- Benefits Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    
+                    <div class="card-hover bg-gradient-to-br from-teal-500/10 to-teal-600/10 p-6 rounded-xl border border-teal-500/30">
+                        <div class="w-16 h-16 bg-teal-500/20 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-lightbulb text-2xl text-teal-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Innovation Enablement</h3>
+                        <p class="text-gray-400">Big picture thinking drives innovative solutions and competitive advantages.</p>
+                    </div>
+
+                    <div class="card-hover bg-gradient-to-br from-green-500/10 to-green-600/10 p-6 rounded-xl border border-green-500/30">
+                        <div class="w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-users-cog text-2xl text-green-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Enhanced Team Collaboration</h3>
+                        <p class="text-gray-400">Shared understanding enables better communication between business and technology teams.</p>
+                    </div>
+
+
+                    <div class="card-hover bg-gradient-to-br from-red-500/10 to-red-600/10 p-6 rounded-xl border border-red-500/30">
+                        <div class="w-16 h-16 bg-red-500/20 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-user-graduate text-2xl text-red-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Career Advancement</h3>
+                        <p class="text-gray-400">Comprehensive knowledge opens doors to senior technical and leadership roles.</p>
+                    </div>
+
                 </div>
             </div>
         </section>
 
         <!-- What Not to Expect -->
         <section class="py-12">
-             <div class="container mx-auto px-6 max-w-4xl">
-                 <div class="bg-yellow-900/30 border border-yellow-700 text-yellow-300 px-6 py-4 rounded-lg text-center flex items-center justify-center gap-4">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="bg-yellow-900/30 border border-yellow-700 text-yellow-300 px-6 py-4 rounded-lg text-center flex items-center justify-center gap-4">
                     <svg class="w-8 h-8 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                     <div>
-                        <h5 class="font-bold mb-1">Please Note: What This Course Is Not</h5>
-                        <p>A "how to trade" course OR A software design program. Our focus is specifically on the understanding of interconnected ecosystem of eTrading systems.</p>
+                        <h5 class="font-bold mb-1">Please Note: This Course Is NOT A</h5>
+                        <p> "how to trade" course OR software design program.</p>
+                        <p> Our focus is specifically on the understanding of interconnected ecosystem of eTrading systems.</p>
                     </div>
-                 </div>
-             </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section id="contact" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h4 class="section-title">Ready to Empower Your Team?</h4>
-                <p class="section-subtitle">Stop relying on a single "system expert" and start building a team of them. For course details, custom arrangements, and registration inquiries, please get in touch.</p>
-                 <a href="mailto:learn@etradingsystems.training" class="cta-button inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 shadow-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    Email: learn@etradingsystems.training
-                </a>
+                </div>
             </div>
         </section>
 
-    </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-700 mt-20">
-        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
-            <p>&copy; 2025 eTradingSystems.Training. All Rights Reserved.</p>
+        <!-- Footer -->
+               <!-- Final CTA -->
+        <footer id="contact" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-chart-line text-white"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-white">Ready to Empower Your Team?</h4>
+            </div>
+            <p class="section-subtitle">Stop relying on a single "system expert" and start building a team of them. For course details, custom arrangements, and registration inquiries, please get in touch.</p>
+                <a href="mailto:learn@etradingsystems.training" class="cta-button inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 shadow-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                Email: learn@etradingsystems.training
+            </a>
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 eTrading Systems Training. All rights reserved.
+                </p>
+            </div>
         </div>
     </footer>
 
-</body>
-</html>
+        <!-- JavaScript for animations and interactions -->
+        <script>
+            // Counter animation
+            function animateCounters() {
+                const counters = document.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        counter.textContent = Math.floor(current);
+                    }, 16);
+                });
+            }
 
+            // Intersection Observer for counter animation
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe the statistics section
+            document.addEventListener('DOMContentLoaded', () => {
+                const statsSection = document.querySelector('.counter').closest('section');
+                if (statsSection) {
+                    observer.observe(statsSection);
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
