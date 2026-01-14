@@ -1,5 +1,4 @@
 # manishbaphna.github.io
 
-Links to various pages
 
-[ETradingEcoSystemTraining](https://manishbaphna.github.io/ETradingEcoSystemTraining.htm)
+[Home Page](https://manishbaphna.github.io/)
