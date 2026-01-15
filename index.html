@@ -1,39 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="tech">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manish Baphna | Portfolio</title>
     <style>
+        /* --- CSS VARIABLES FOR THEMES --- */
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
             --bg-color: #f4f7f6;
             --text-color: #333;
             --card-bg: #ffffff;
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --border-style: solid;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+            --btn-hover-transform: translateY(-2px);
+            --overlay-opacity: 0;
+            --scanline-display: none;
         }
 
+        /* 1. LIGHT THEME */
+        [data-theme="light"] {
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* 2. DARK THEME */
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --card-bg: #2d2d2d;
+            --primary-color: #ffffff;
+            --accent-color: #bb86fc;
+            --shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        /* 3. TECH THEME (Revamped) */
+        [data-theme="tech"] {
+            --bg-color: #000000;
+            --text-color: #00ff41; /* Classic Terminal Green */
+            --card-bg: rgba(0, 20, 0, 0.85); /* Semi-transparent black */
+            --primary-color: #00ff41;
+            --accent-color: #00ff41;
+            --font-main: 'Courier New', Courier, monospace;
+            --border-style: dashed;
+            --shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            --btn-hover-transform: none;
+            --scanline-display: block;
+        }
+
+        /* --- GLOBAL STYLES --- */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--font-main);
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden; /* Prevent scrollbar from effects */
         }
 
+        /* --- TECH THEME BACKGROUND (Code Matrix) --- */
+        /* This uses an SVG data URI to create a background of text without external images */
+        [data-theme="tech"] body {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cstyle%3Etext%7Bfill:%23003300;font-family:'Courier New',monospace;font-size:14px;font-weight:bold;opacity:0.6;%7D%3C/style%3E%3Ctext x='10' y='20'%3Eif(optimize) return true;%3C/text%3E%3Ctext x='10' y='60'%3Estd::vector%26lt;Strategy%26gt; alpha;%3C/text%3E%3Ctext x='10' y='100'%3Ewhile(trading) execute(Algo);%3C/text%3E%3Ctext x='10' y='140'%3Eimport tensorflow as tf;%3C/text%3E%3Ctext x='10' y='180'%3Evoid main(String[] args)%3C/text%3E%3Ctext x='200' y='40'%3E// AI Model Loading...%3C/text%3E%3Ctext x='200' y='80'%3Eclass Quantitative extends Trader%3C/text%3E%3Ctext x='200' y='120'%3EC++ Memory Allocation%3C/text%3E%3Ctext x='200' y='160'%3EHigh_Frequency_Data_Feed%3C/text%3E%3Ctext x='50' y='250'%3E01010011 01010100 01001111%3C/text%3E%3Ctext x='220' y='280'%3Ereturn maximize_profit();%3C/text%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-attachment: fixed; /* Parallax effect */
+        }
+
+        /* --- SCANLINE EFFECT (CRT Monitor) --- */
+        body::after {
+            content: " ";
+            display: var(--scanline-display);
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 200;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        /* --- THEME SWITCHER --- */
+        .theme-switch-wrapper {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 300;
+        }
+        select {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid var(--accent-color);
+            background: var(--card-bg);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* --- CONTAINER --- */
         .container {
+            position: relative;
             background-color: var(--card-bg);
-            width: 100%;
+            backdrop-filter: blur(2px); /* Blur the code behind the card slightly */
+            width: 90%;
             max-width: 600px;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
             text-align: center;
-            margin: 20px;
+            margin-top: 60px;
+            border: 1px var(--border-style) transparent;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        [data-theme="tech"] .container {
+            border: 1px solid #00ff41;
+            border-radius: 0;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.3), inset 0 0 20px rgba(0, 20, 0, 0.8);
         }
 
         .profile-pic {
@@ -43,21 +140,34 @@
             object-fit: cover;
             border: 4px solid var(--accent-color);
             margin-bottom: 20px;
+            transition: border-color 0.3s;
         }
 
         h1 {
             color: var(--primary-color);
             margin-bottom: 5px;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
+        
+        /* Typing cursor for Tech Theme */
+        [data-theme="tech"] h1::before { content: "> "; }
+        [data-theme="tech"] h1::after {
+            content: '█';
+            animation: blink 1s infinite;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
         p.subtitle {
-            color: #666;
+            opacity: 0.8;
             margin-top: 0;
             margin-bottom: 30px;
             font-size: 1.1em;
         }
 
+        /* --- LINKS & BUTTONS --- */
         .links {
             display: flex;
             flex-direction: column;
@@ -70,47 +180,72 @@
             background-color: var(--card-bg);
             color: var(--primary-color);
             text-decoration: none;
-            border: 1px solid #ddd;
+            border: 1px solid var(--accent-color);
             border-radius: 8px;
             transition: all 0.3s ease;
             font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+
+        /* Tech theme button specific */
+        [data-theme="tech"] .btn {
+            border-radius: 0;
+            border: 1px solid #00ff41;
+            background: rgba(0, 0, 0, 0.8);
+            position: relative;
+            overflow: hidden;
         }
 
         .btn:hover {
-            background-color: var(--primary-color);
+            background-color: var(--accent-color);
             color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-color: var(--primary-color);
+            transform: var(--btn-hover-transform);
+        }
+        
+        [data-theme="tech"] .btn:hover {
+            background-color: #003300;
+            color: #00ff41;
+            box-shadow: 0 0 10px #00ff41;
+            transform: none;
+            border-color: #fff;
         }
 
         .btn span {
             display: block;
             font-size: 0.9em;
-            color: #888; /* Subtext color */
+            opacity: 0.7;
             font-weight: normal;
-            margin-top: 2px;
+            margin-top: 4px;
         }
         
         .btn:hover span {
-            color: #ccc;
+            opacity: 1;
+            color: inherit;
         }
 
         footer {
             margin-top: 40px;
             font-size: 0.9em;
-            color: #999;
+            opacity: 0.6;
         }
     </style>
 </head>
 <body>
 
+    <div class="theme-switch-wrapper">
+        <label for="theme">Theme: </label>
+        <select id="theme" onchange="switchTheme(this.value)">
+            <option value="tech" selected>Tech</option>
+            <option value="light">Professional Light</option>
+            <option value="dark">Modern Dark</option>
+        </select>
+    </div>
+
     <div class="container">
         <img src="ManishPic.jpg" alt="Manish Baphna" class="profile-pic" onerror="this.src='https://via.placeholder.com/150?text=MB'">
         
         <h1>Manish Baphna</h1>
-        <p class="subtitle">Engineering Manager | Software Developer | Tech Leader | AI Enthusiast</p>
+        <p class="subtitle">Engineering Manager | Tech Leader | AI & Algo Enthusiast</p>
 
         <div class="links">
             <a href="https://github.com/manishbaphna" target="_blank" class="btn">
@@ -125,14 +260,17 @@
 
             <a href="https://dishtail.com" target="_blank" class="btn">
                 Dishtail Project
-                <span>My passion for cooking and experimentation resulted in this project;find recipes for given ingredients and 
-                    explore fusion recipes.
-                </span>
+                <span>My passion for cooking and experimentation resulted in this project; find recipes for given ingredients and explore fusion recipes.</span>
             </a>
 
             <a href="https://manishbaphna.github.io/LordOfTheSquares/" target="_blank" class="btn">
                 Lord of the Squares
                 <span>Digital version of My Childhood paper-pen game</span>
+            </a>
+
+            <a href="javascript:void(0)" onclick="openCV()" class="btn">
+                My CV
+                <span>Restricted Access (Password Required)</span>
             </a>
         </div>
 
@@ -141,5 +279,32 @@
         </footer>
     </div>
 
+    <script>
+        // 1. Password Protection Logic
+        function openCV() {
+            const password = prompt("Please enter the password to view the CV:");
+            
+            if (password === "ManishIsBest") {
+                // Success: Redirect to the CV repo
+                window.open("https://github.com/manishbaphna/MyCV", "_blank");
+            } else if (password !== null) {
+                // Failure
+                alert("Incorrect password. Access denied.");
+            }
+        }
+
+        // 2. Theme Switching Logic
+        function switchTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('theme', themeName);
+        }
+
+        // Check for saved theme preference on load
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            document.getElementById('theme').value = currentTheme;
+        }
+    </script>
 </body>
 </html>
